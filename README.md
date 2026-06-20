@@ -1,9 +1,25 @@
-# msSqlBackupCMD Backs up one or more MS SQL databases using Windows CMD, compresses the backup file with RAR, and transfers it to a shared folder. # MS SQL Full Backup Script with RAR Compression & Network Transfer This project is a flexible **Windows Batch Script** that automates the backup process for one or multiple Microsoft SQL Server databases. It creates uncompressed native .bak files, compresses them using WinRAR (BEST level), transfers them to a network shared folder, rotates old backups, and logs every action with a timestamp. 
+# msSqlBackupCMD
+Backs up one or more MS SQL databases using Windows CMD, compresses the backup file with RAR, and transfers it to a shared folder.
 
-## 🚀 Motivation I was always looking for a **simple, free, and unrestricted** backup solution. Many free tools either crashed intermittently or imposed frustrating limitations—such as restricting you to backing up only 2 databases or limiting you to a single job. I also didn't want to rely on VEEAM for this specific use case. So, I decided to build my own script with the help of AI (Claude). The beauty of this approach is that I can set up multiple scheduled tasks (daily, hourly, weekly) for different groups of databases. Plus, it's completely customizable—I can easily extend it later to support **DIFF** backups, turn it into a Windows service, or even build a web application around it via a REST API. 
+# MS SQL Full Backup Script with RAR Compression & Network Transfer
 
-## ✨ Features - **Full (FULL) Backup**: Creates a native SQL backup of one or multiple databases. - **No SQL Compression**: The .bak file is created *without* SQL Server's native compression. - **RAR Compression**: Compresses the backup file using WinRAR with the **BEST** compression level. - **Network Transfer**: Automatically copies the compressed archive to any network shared folder. - **Retention Policy**: Keeps only the N newest backup archives and automatically deletes older ones (tested and verified). - **Detailed Logging**: Writes a separate log entry per execution, including the full date and time, into a .txt file. - **Backup Verification**: Includes native SQL VERIFYONLY to ensure the backup integrity immediately after creation. 
+This project is a flexible **Windows Batch Script** that automates the backup process for one or multiple Microsoft SQL Server databases. It creates uncompressed native `.bak` files, compresses them using WinRAR (BEST level), transfers them to a network shared folder, rotates old backups, and logs every action with a timestamp.
 
+## 🚀 Motivation
+
+I was always looking for a **simple, free, and unrestricted** backup solution. Many free tools either crashed intermittently or imposed frustrating limitations—such as restricting you to backing up only 2 databases or limiting you to a single job. I also didn't want to rely on VEEAM for this specific use case.
+
+So, I decided to build my own script with the help of AI (Claude). The beauty of this approach is that I can set up multiple scheduled tasks (daily, hourly, weekly) for different groups of databases. Plus, it's completely customizable—I can easily extend it later to support **DIFF** backups, turn it into a Windows service, or even build a web application around it via a REST API.
+
+## ✨ Features
+
+- **Full (FULL) Backup**: Creates a native SQL backup of one or multiple databases.
+- **No SQL Compression**: The `.bak` file is created *without* SQL Server's native compression.
+- **RAR Compression**: Compresses the backup file using WinRAR with the **BEST** compression level.
+- **Network Transfer**: Automatically copies the compressed archive to any network shared folder.
+- **Retention Policy**: Keeps only the `N` newest backup archives and automatically deletes older ones (tested and verified).
+- **Detailed Logging**: Writes a separate log entry per execution, including the full date and time, into a `.txt` file.
+- **Backup Verification**: Includes native SQL `VERIFYONLY` to ensure the backup integrity immediately after creation.
 
 ## ⚙️ Configuration
 
